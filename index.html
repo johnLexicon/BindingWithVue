@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binding with Vue</title>
+</head>
+
+<body>
+    <div id="form" class="container">
+        <div class="form-group">
+            <input v-model="query" placeholder="Search..." type="text">
+            <div><small>Searching for: {{ query }}</small></div>
+        </div>
+        <div class="form-group">
+            <input v-model.lazy.trim="firstName" placeholder="First name" type="text">
+            <div><small>Lazy binding: {{firstName}}</small></div>
+        </div>
+        <div class="form-group">
+            <input v-model.number="age" placeholder="Age.." type="text">
+            <div><small>Age: {{age}}</small></div>
+        </div>
+        <div class="form-group">
+            <textarea v-model="comments" placeholder="Comments..." name="comments" id="comments" cols="30"
+                rows="10"></textarea>
+            <div><small>Comments: {{ comments }}</small></div>
+        </div>
+        <div class="form-group">
+            <span>Male: </span><input v-model="gender" value="male" type="radio">
+            <span>Female: </span><input v-model="gender" value="female" type="radio">
+            <span>Other: </span><input v-model="gender" value="other" type="radio">
+            <div><small>Gender: {{gender}}</small></div>
+        </div>
+        <div class="form-group">
+            <span>Liscense agreement: </span>
+            <input v-model="agreement" type="checkbox">
+            <div><small>Read license agreement: {{agreement}}</small></div>
+        </div>
+        <div class="form-group">
+            <span>Berries</span><br>
+            <select multiple v-model="berries" name="berries" id="berries">
+                <option value="strawberries">Strawberries</option>
+                <option value="blueberries">Blueberries</option>
+                <option value="raspberries">Raspberries</option>
+                <option value="blackberries">blackberries</option>
+            </select>
+            <div><small>{{berries}}</small></div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
